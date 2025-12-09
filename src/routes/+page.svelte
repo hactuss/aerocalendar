@@ -17,13 +17,11 @@
 <main>
 	<h1>Aero Calendar</h1>
 	<p>Hactuss</p>
+	<br />
+	<div id="Datebox">
 	<h3>{date.getDay() + '.' + date.getMonth() + '.' + date.getFullYear()}</h3>
-	{#each date as datet, k}
-		<div id="Datebox">
-			<p>{datet}</p>
-			<h2>{day(date)}</h2>
-		</div>
-	{/each}
+	<h2>{day(date)}</h2>
+	</div>
 </main>
 
 <style lang="scss">
