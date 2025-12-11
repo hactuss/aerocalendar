@@ -17,7 +17,7 @@
 		"test:e2e": "playwright test"
 	},
 	"dependencies": {
-		"sass": "^1.95.1"
+		"sass": "^1.96.0"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.49.1",

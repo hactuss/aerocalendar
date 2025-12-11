@@ -1,14 +1,10 @@
 <script>
   const date = new Date();
-  const k = 25;
-  let day_string = "";
-  let i = "he";
-
+  let month = date.getMonth() + 1;
   let map = new Map();
   map.set(1, "jeöö");
   console.log(map.entries());
   console.log(map.get(1));
-
   function day(d) {
     switch (d.getDay()) {
       case 1:
@@ -42,8 +38,9 @@
   <br />
   <div id="Datebox" class="flex col">
     <h3 id="fulldate">
-      {date.getDay() + "." + date.getMonth() + "." + date.getFullYear()}
+      {date.getDate() + "." + month + "." + date.getFullYear()}
     </h3>
+
     <div id="weekday" class="flex">
       <h2>{day(date)}</h2>
     </div>
