@@ -1,11 +1,12 @@
 <script>
   const date = new Date();
+  let day = date.getDate();
   let month = date.getMonth() + 1;
-  let map = new Map();
-  map.set(1, "jeöö");
-  console.log(map.entries());
-  console.log(map.get(1));
-  function day(d) {
+  let year = date.getFullYear();
+
+  let chrday = 24,
+    chrmonth = 12;
+  function dayfunc(d) {
     switch (d.getDay()) {
       case 1:
         return "Monday";
@@ -36,13 +37,34 @@
   <h1>Aero Calendar</h1>
   <p>Hactuss</p>
   <br />
-  <div id="Datebox" class="flex col">
+  <div id="Datebox" class="flex">
     <h3 id="fulldate">
       {date.getDate() + "." + month + "." + date.getFullYear()}
     </h3>
 
     <div id="weekday" class="flex">
-      <h2>{day(date)}</h2>
+      <h2>{dayfunc(date)}</h2>
+    </div>
+  </div>
+  <div id="Datebox">
+    <h3>Time until Christmas</h3>
+    <h2 class="flex">
+      {chrmonth - month} months, {chrday - day} days
+    </h2>
+  </div>
+  <div id="Datebox">
+    <h3>Time until {year + 1}</h3>
+    <h2 class="flex">
+      {12 - month} months
+    </h2>
+  </div>
+  <!-- --
+  <div id="Datebox" class="flex col">
+    <div>
+      <p>Time until {year + 1}</p>
+      <h2>
+        {12 - month} months, {month.toFixed() - day} days,
+      </h2>
     </div>
   </div>
   <!---
@@ -71,10 +93,15 @@
   }
   #Datebox {
     margin-bottom: 1%;
-    border: solid 1px black;
+    border: solid 1px white;
 
     border-radius: 10px;
     backdrop-filter: blur(20px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   #weekday {
     width: 100%;
@@ -87,6 +114,9 @@
   }
   .col {
     flex-direction: column;
+  }
+  .row {
+    flex-direction: row;
   }
   .bor {
     border: solid 1px black;
